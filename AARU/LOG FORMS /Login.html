@@ -1,42 +1,26 @@
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="login.scss">
-</head>
-<body>
-    <div id="wrapper" >
-        <h1 class="logo">𓄿𓄿𓂋𓅲</h1>
-        <h2 class="logo">Discover the truth</h2>
-        <form>
-          <input type="radio" id="login" name="action" value="login" checked>
-          <input type="radio" id="register" name="action" value="register">
-          <input type="radio" id="reset" name="action" value="reset">
-          <div id="inputs">
-            <div>
-              <input type="text" placeholder="email" autofocus>
-              <div>
-                <input type="password" placeholder="password">
-                <div>
-                  <input type="password" placeholder="repeat password">
-                  <input type="submit" value="reset password">
-                  <div>
-                    <input class="logreg" type="submit" value="register">
-                    <input class="logreg" type="submit" value="login">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="labels">
-            <label for="login">Already registered? <span>Login</span></label>
-            <label for="reset">Password lost? <span>Reset</span></label>
-            <label for="login"><span>Back</span></label>
-            <label for="register">Not registered? <span>Create an account</span></label>
-          </div>
-        </form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login To AARU</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1 class="">𓄿𓄿𓂋𓅲</h1>
+      <h2 class="">Discover the truth</h2>
+
+      <form action="LoginForm.php" method="post">
+        <input type="email" placeholder="EMAIL" name="email" required/>
+        <input type="password" name="password" id="" placeholder="PASSWORD" required />
+        <input type="submit" value="LOGIN" />
+      </form>
+
+      <div class="labels">
+        <label for="register">
+          Not registered? <span onclick="location.href='Register.HTML'">Create an account</span>
+        </label>
       </div>
-        
-</body>
+    </div>
+  </body>
 </html>
