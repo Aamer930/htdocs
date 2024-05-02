@@ -1,0 +1,183 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url("../PICS/back11.svg");
+  background-size: cover;
+  background-color: #e5d5bd;
+  z-index: 10;
+
+}
+p,a,h1,h2,h3,h4 {
+	margin: 0;
+	padding: 0;
+}
+
+.section-team {
+	font-family: "Poppins", sans-serif;
+	padding: 80px 0;
+}
+
+.section-team .header-section {
+	margin-bottom: 50px;
+}
+
+.section-team .header-section .small-title {
+    margin-bottom: 25px;
+	font-size: 16px;
+    font-weight: 500;
+    color: rgb(233, 70, 0);
+}
+
+.section-team .header-section .title {
+    font-weight: 700;
+    font-size: 45px;
+}
+
+.section-team .single-person {
+	margin-top: 30px;
+	padding: 30px;
+	background-color: #f6f9ff;
+	border-radius: 5px;
+}
+
+.section-team .single-person:hover {
+	background: linear-gradient(to right, rgb(233, 70, 0), rgb(156, 48, 1));
+}
+
+.section-team .single-person .person-image {
+    position: relative;
+    margin-bottom: 50px;
+    border-radius: 50%;
+    border: 4px dashed transparent;
+    transition: padding .3s;
+}
+
+.section-team .single-person:hover .person-image {
+	padding: 12px;
+    border: 4px dashed #fff;
+}
+
+.section-team .single-person .person-image img {
+	width: 100%;
+    border-radius: 50%;
+}
+
+.section-team .single-person .person-image .icon {
+	position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,50%);
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background: linear-gradient(to right, #b6a996, #b6a996);
+    color: rgb(233, 70, 0);
+    border-radius: 50%;
+    font-size: 24px;
+}
+
+.section-team .single-person:hover .person-image .icon {
+	background: none;
+	background-color: #fff;
+	color: #fd0202;
+}
+
+.section-team .single-person .person-info .full-name {
+	margin-bottom: 10px;
+	font-size: 28px;
+    font-weight: 700;
+}
+
+.section-team .single-person .person-info .speciality {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: rgb(233, 70, 0);
+}
+
+.section-team .single-person:hover .full-name,
+.section-team .single-person:hover .speciality {
+	color: #080000;
+}
+
+.logo {
+    font-size: 32px;
+    color: rgb(233, 70, 0);
+    text-decoration: none;
+    font-weight: 700;
+    padding-left: 20px;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: rgb(233, 70, 0);
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: rgb(233, 70, 0);
+    transition: 0.5s;
+
+}
+
+.navbar a:hover:before {
+    width: 100%;
+}
+
+.nav-header {
+    position: relative;
+    width: 100%;
+    padding: 30px 10px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+li, a{
+    font-weight: 500;
+    font-size: 30px;
+    color: rgb(233, 70, 0);
+    border: none;
+    text-decoration: none;
+}
+.navbar {
+    list-style: none;
+}
+.navbar li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+.navbar li a{
+    transition: all 0.3 ease 0;
+}
+.aboutus_butt{
+    border: none;
+    border-radius: 50px;
+    color: white;    
+    padding: 16px 16px;
+    margin-right: 50px;
+    font-size: 100;
+    background-color: white;
+}
+.aboutus_butt:hover{
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(2, 0, 0, 0.8);
+    padding: 16px 16px;
+    cursor: pointer;
+}
+.navbar_text{
+    font-weight: 500;
+}

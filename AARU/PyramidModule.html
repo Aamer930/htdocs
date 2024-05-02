@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Pyramid 3D Module </title>
+<link rel="stylesheet" href="PyramidMoudle.css"> <!-- Changed CSS file name -->
+</head>
+<body>
+
+<input id="view-bricks" type="checkbox">
+<label for="view-bricks"><span>BRICKS</span></label>
+
+<input id="view-names" type="checkbox" checked="checked">
+<label for="view-names"><span>NAMES</span></label>
+
+<input id="play-pause" type="checkbox">
+<label for="play-pause"><span>PAUSE</span><span>PLAY</span></label>
+
+<input id="view-north" type="checkbox" checked="checked">
+<label for="view-north"><span>NORTH</span></label>
+
+<input id="view-info" type="checkbox">
+<label for="view-info"><span>INFO</span></label>
+
+<input id="back-to-menu" type="checkbox">
+<label for="back-to-menu" onclick="redirectToHomePage()"><span>BACK</span></label>
+<script>
+    function redirectToHomePage() {
+        window.location.href = "./HomePage.HTML";
+    }
+</script>
+
+<div class="pyramid">
+
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    
+    <div class="king">
+        <div class="side"></div>
+        <div class="side"></div>
+        <div class="side"></div>
+        <div class="side"></div>
+        <div class="side"></div>
+        <div class="side"></div>
+        <div class="roof">
+            <span></span>
+        </div>
+    </div>
+    
+    <div class="antechamber">
+        <div class="side"></div>
+        <div class="side"></div>
+        <div class="side"></div>
+        <div class="side"></div>
+        <div class="side"></div>
+    </div>
+    
+    <div class="king-channel-left"></div>
+    <div class="king-channel-right"></div>
+    <div class="gallery"></div>
+
+    <div class="queen">
+        <div class="side"></div>
+        <div class="side"></div>
+        <div class="side"></div>
+        <div class="side"></div>
+        <div class="side"></div>
+        <div class="roof">
+            <span></span>
+        </div>
+    </div>
+    
+    <div class="queen-channel-left"></div>
+    <div class="queen-channel-right"></div>
+    <div class="passage"></div>
+    
+    <div class="unfinished">
+        <div class="side"></div>
+        <div class="side"></div>
+        <div class="side"></div>
+        <div class="side"></div>
+        <div class="side"></div>
+    </div>
+    
+    <div class="ascending"></div>
+    <div class="entrance"></div>
+    <div class="escape">
+        <span></span>
+        <span></span>
+    </div>
+    
+</div>
+
+
+<div class="info">
+
+    <h1>Great Pyramid of Giza</h1>
+    
+    <table>
+        <tbody>
+            <tr>
+                <th>Constructed</th>
+                <td><abbr title="circa">c.</abbr> 2600 BC (4th dynasty)</td>
+            </tr>
+            <tr>
+                <th>Material</th>
+                <td>Mainly limestone, mortar, some granite</td>
+            </tr>
+            <tr>
+                <th>Height</th>
+                <td>146.6&nbsp;m (481&nbsp;ft) or 280 cubits (<i>originally</i>)</td>
+            </tr>
+            <tr>
+                <th>Base</th>
+                <td>230.33&nbsp;m (756&nbsp;ft) or 440 cubits</td>
+            </tr>
+            <tr>
+                <th>Volume</th>
+                <td>2.6&nbsp;million&nbsp;m<sup>3</sup> (92&nbsp;million&nbsp;cu&nbsp;ft)</td>
+            </tr>
+            <tr>
+                <th>Slope</th>
+                <td>51°50'40" or Seked of 5&#189; palms</td>
+            </tr>
+            <tr>
+                <th>Coordinates</th>
+                <td><a target="_blank" href="https://www.google.com/maps/@29.9793507,31.1339445,815m/data=!3m1!1e3">29°58′45″N 31°08′03″E</a></td>
+            </tr>
+            <tr style="display:none;">
+                <th colspan="2">
+                </th>
+            </tr>
+        </tbody>
+    </table>
+   
+    
+    <h2 class="king-title">King's Chamber</h2>
+    <p>Formed by granite slabs, rectangular in shape, smooth walls and ceiling, without decoration, and currently only contains an empty granite sarcophagus, without inscriptions. On the roof are the so-called discharge chambers, and the highest has its roof with large sloping blocks, gabled, to deflect the great pressure exerted by the upper blocks of the pyramid. It is accessed through a horizontal passage called the antechamber that starts at the upper end of the Grand Gallery.</p>
+    
+    <h2 class="gallery-title">Grand Gallery</h2>
+    <p>The Grand Gallery is a large passage about 47 meters long and 8 meters high. The walls of the Grand Gallery are vertical from the ground to a height of two meters and, from there upwards, by approaching the courses with the staggered stones, forming a false vault.</p>
+    
+    <h2 class="queen-title">Queen's Chamber</h2>
+    <p>So named by the Arabs, although according to most Egyptologists it was not intended for the king's wife but rather for a Ka statue of the king himself. It is accessed through a horizontal passage, which communicates with the lower area of the Grand Gallery. It has a rectangular plan, smooth walls, without decoration, with a niche, and a sloping, gabled roof.</p>
+    
+    <h2 class="unfinished-title">Unfinished Chamber</h2>
+    <p>Although seemingly known in antiquity, its existence had been forgotten in the middle ages. It was rediscovered in 1817 by Giovanni Battista Caviglia. Squared Greek or Roman character were found on its roof made with the light of a candle, suggesting that the chamber had indeed been accessible during ancient Roman times.</p>
+    
+    <p>INFO: <span>WIKIPEDIA</span> | <a href="https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza" target="_blank" title="Great Pyramid of Giza">EN</a> | <a href="https://es.wikipedia.org/wiki/Gran_Pir%C3%A1mide_de_Guiza" target

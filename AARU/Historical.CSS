@@ -1,0 +1,13 @@
+#VideoMain {
+    border-style: none;
+    border: 8px outset #000000;
+    border-color: rgb(233, 70, 0);
+    padding: 6px;
+    width: 700px; 
+    height: 480px; 
+    display: block;
+    margin: auto; 
+    box-sizing: border-box; 
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
