@@ -42,6 +42,7 @@ $result = $conn->query($sql);
     <textarea name="description" placeholder="Description" required></textarea>
     <input type="number" name="capacity" placeholder="Capacity" required>
     <button type="submit">Add Trip</button>
+    <a href="/AARU/Admin/AdminEdit.php" ><input type="button" value="EDIT OR DELETE" ></a>
 </form>
 
 <h1>Existing Trips</h1>
