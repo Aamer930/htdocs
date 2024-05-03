@@ -54,16 +54,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
         <div class="button-container">
             <a href="./Article pages/ArticleHome.php"> <button type="button" class="button1">CONTINUE</button></a>
         </div>
@@ -78,16 +68,13 @@
     <p id="p1">The music is running in the background.</p>
 
     <script>
-        // JavaScript to play video once and then play the audio
         document.addEventListener('DOMContentLoaded', function () {
             var video = document.getElementById('VideoMain');
             var audio = document.getElementById('BackgroundMusic');
 
-            // Mute the audio initially
             audio.muted = true;
 
             video.onended = function () {
-                // Unmute and play the audio once the video has ended
                 audio.muted = false;
                 audio.play();
             };

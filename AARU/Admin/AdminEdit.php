@@ -36,23 +36,26 @@ $result = $conn->query($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Manage Trips</title>
 </head>
+
 <body>
-<h1>Trips Management</h1>
-<?php while ($row = $result->fetch_assoc()): ?>
-    <form method="post">
-        <input type="hidden" name="id" value="<?= $row['id'] ?>">
-        <input type="text" name="destination" value="<?= $row['destination'] ?>">
-        <input type="date" name="date" value="<?= $row['date'] ?>">
-        <input type="number" name="price" value="<?= $row['price'] ?>">
-        <textarea name="description"><?= $row['description'] ?></textarea>
-        <input type="number" name="capacity" value="<?= $row['capacity'] ?>">
-        <button type="submit" name="update">Update</button>
-        <button type="submit" name="delete">Delete</button>
-    </form>
-<?php endwhile; ?>
+    <h1>Trips Management</h1>
+    <?php while ($row = $result->fetch_assoc()): ?>
+        <form method="post">
+            <input type="hidden" name="id" value="<?= $row['id'] ?>">
+            <input type="text" name="destination" value="<?= $row['destination'] ?>">
+            <input type="date" name="date" value="<?= $row['date'] ?>">
+            <input type="number" name="price" value="<?= $row['price'] ?>">
+            <textarea name="description"><?= $row['description'] ?></textarea>
+            <input type="number" name="capacity" value="<?= $row['capacity'] ?>">
+            <button type="submit" name="update">Update</button>
+            <button type="submit" name="delete">Delete</button>
+        </form>
+    <?php endwhile; ?>
 </body>
+
 </html>

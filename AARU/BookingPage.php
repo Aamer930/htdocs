@@ -66,20 +66,25 @@ if (!$result) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Book a Trip</title>
 </head>
+
 <body>
-<h1>Available Trips</h1>
-<?php if ($message != "") echo "<p>$message</p>"; ?>
-<ul>
-    <?php while ($row = $result->fetch_assoc()): ?>
-        <li>
-            <?= htmlspecialchars($row['destination']) ?> (<?= $row['date'] ?>) - $<?= $row['price'] ?> - Spots Left: <?= $row['capacity'] ?>
-            <button onclick="window.location.href='?book=true&trip_id=<?= $row['id'] ?>'">Book Now</button>
-        </li>
-    <?php endwhile; ?>
-</ul>
+    <h1>Available Trips</h1>
+    <?php if ($message != "")
+        echo "<p>$message</p>"; ?>
+    <ul>
+        <?php while ($row = $result->fetch_assoc()): ?>
+            <li>
+                <?= htmlspecialchars($row['destination']) ?> (<?= $row['date'] ?>) - $<?= $row['price'] ?> - Spots Left:
+                <?= $row['capacity'] ?>
+                <button onclick="window.location.href='?book=true&trip_id=<?= $row['id'] ?>'">Book Now</button>
+            </li>
+        <?php endwhile; ?>
+    </ul>
 </body>
+
 </html>

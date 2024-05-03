@@ -1,36 +1,59 @@
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register To AARU</title>
-    <link rel="stylesheet" href="/AARU/LOG FORMS /login.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/AARU/LOG FORMS /login.css" />
+  </head>
+  <body>
     <body>
-        <div class="wrapper">
-          <h1 class="">𓄿𓄿𓂋𓅲</h1>
-          <h2 class="">Discover The Truth</h2>
-    
-          <form class="form" action="RegisterForm.php" method="post">
-            <input type="email" placeholder="EMAIL" name="email" required/>
-            <input type="text" placeholder="First Name" name="firstName" required/>
-            <input type="text" placeholder="Last Name" name="lastName" required/>
-            <input type="tel" placeholder="Phone Number" name="phoneNumber" required/>
-            <input type="text" placeholder="Nationality" name="nationality" required/>
-            <input type="password" name="password" id="" placeholder="PASSWORD" required />
+      <div class="wrapper">
+        <h1 class="">𓄿𓄿𓂋𓅲</h1>
+        <h2 class="">Discover The Truth</h2>
 
-            <label for="admin">Admin</label><input type="radio" id="admin" name="is_admin" value="1" required>
-            <label for="user">User</label><input type="radio" id="user" name="is_admin" value="0" required>
-            <input type="submit" value="Register" />
-          </form>
-    
-          <div class="labels">
-            <label for="register">
-              Already Registered? <span onclick="location.href='Login.html'">Login</span>
-            </label>
-          </div>
+        <form class="form" action="RegisterForm.php" method="post">
+          <input type="email" placeholder="EMAIL" name="email" required />
+          <input
+            type="text"
+            placeholder="First Name"
+            name="firstName"
+            required
+          />
+          <input type="text" placeholder="Last Name" name="lastName" required />
+          <input
+            type="tel"
+            placeholder="Phone Number"
+            name="phoneNumber"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Nationality"
+            name="nationality"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            id=""
+            placeholder="PASSWORD"
+            required
+          />
+
+          <label for="admin">Admin</label
+          ><input type="radio" id="admin" name="is_admin" value="1" required />
+          <label for="user">User</label
+          ><input type="radio" id="user" name="is_admin" value="0" required />
+          <input type="submit" value="Register" />
+        </form>
+
+        <div class="labels">
+          <label for="register">
+            Already Registered?
+            <span onclick="location.href='Login.html'">Login</span>
+          </label>
         </div>
-      </body>
-    
-</body>
+      </div>
+    </body>
+  </body>
 </html>

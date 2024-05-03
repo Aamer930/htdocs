@@ -7,27 +7,27 @@
 </head>
 
 <body>
-  <header class="nav-header">
-            <a href="#" class="logo">𓄿𓄿𓂋𓅲</a>
-            <?php
-session_start();
-if (isset($_SESSION['first_name']) && isset($_SESSION['last_name'])) {
-    echo 'HELLO, '.$_SESSION['first_name'].' '.$_SESSION['last_name'];
-} else {
-    echo 'Session variables are not set.';
-}
-session_unset();
-?>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="/AARU/HomePage.php" class="navbar_text">Home</a></li>
-                    <li><a href="/AARU/circleNav.php" class="navbar_text">circleNav</a></li>
-                    <li><a href="/AARU/BookingPage.php" class="navbar_text">book trip</a></li>
-                    
-                </ul>
-            </nav>
-            <a href="/AARU/AboutUs/AboutUs.html"><button class="aboutus_butt">ABOUT US!!</button></a>
-        </header>
+    <header class="nav-header">
+        <a href="#" class="logo">𓄿𓄿𓂋𓅲</a>
+        <?php
+        session_start();
+        if (isset($_SESSION['first_name']) && isset($_SESSION['last_name'])) {
+            echo 'HELLO, ' . $_SESSION['first_name'] . ' ' . $_SESSION['last_name'];
+        } else {
+            echo 'Session variables are not set.';
+        }
+        session_unset();
+        ?>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/AARU/HomePage.php" class="navbar_text">Home</a></li>
+                <li><a href="/AARU/circleNav.php" class="navbar_text">circleNav</a></li>
+                <li><a href="/AARU/BookingPage.php" class="navbar_text">book trip</a></li>
+
+            </ul>
+        </nav>
+        <a href="/AARU/AboutUs/AboutUs.html"><button class="aboutus_butt">ABOUT US!!</button></a>
+    </header>
 
     <header>
         <img id="header1" src="./PICS/traslogo.png" />
