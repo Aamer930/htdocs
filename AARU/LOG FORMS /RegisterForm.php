@@ -2,40 +2,29 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$db = "AARU";
-$conn = new mysqli($servername, $username, $password, $db);
+$dbname = "AARU";
 
+$conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+  die("Connection failed: " . $conn->connect_error);
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['email']) && isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['phoneNumber']) && isset($_POST['nationality']) && isset($_POST['password'])) {
-        $email = $_POST['email'];
-        $firstName = $_POST['firstName'];
-        $lastName = $_POST['lastName'];
-        $phoneNumber = $_POST['phoneNumber'];
-        $nationality = $_POST['nationality'];
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+$email = $_POST['email'];
+$firstName = $_POST['firstName'];
+$lastName = $_POST['lastName'];
+$phoneNumber = $_POST['phoneNumber'];
+$nationality = $_POST['nationality'];
+$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+$is_admin = $_POST['is_admin'];
 
-        $stmt = $conn->prepare("INSERT INTO users (email, first_name, last_name, phone_number, nationality, password) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssss", $email, $firstName, $lastName, $phoneNumber, $nationality, $password);
+$sql = "INSERT INTO users (email, first_name, last_name, phone_number, nationality, password, is_admin)
+VALUES ('$email', '$firstName', '$lastName', '$phoneNumber', '$nationality', '$password', '$is_admin')";
 
-        if ($stmt->execute()) {
-            echo "New record created successfully";
-            session_start();
-            $_SESSION['email'] = $email;
-            $_SESSION['firstName'] = $firstName;
-            $_SESSION['lastName'] = $lastName;
-            header("Location: Login.html");
-            exit();
-        } else {
-            echo "Error: " . $stmt->error;
-        }
-        $stmt->close();
-    } else {
-        echo "Please complete all fields";
-    }
+if ($conn->query($sql) === TRUE) {
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
 }
+
 $conn->close();
 ?>

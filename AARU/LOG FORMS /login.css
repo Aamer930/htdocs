@@ -1,6 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
 body {
-  background-color: #e9f8df;
+  background-image: url("/AARU/PICS/back11.svg");
+  background-size: cover;
+  background-color: #e5d5bd;
+  z-index: 10;
   font-family: "Raleway", sans-serif;
 }
 .wrapper {
@@ -18,11 +21,11 @@ body {
 }
 h1 {
   font-size: 43px;
-  color: #416171;
+  color: rgb(233, 70, 0);
   margin: 0;
 }
 h2 {
-  color: #349e97;
+  color: rgb(233, 70, 0);
 }
 
 input {
@@ -49,13 +52,11 @@ input {
   }
 
   &[type="submit"] {
-    background: #43434c;
+    background: rgb(233, 70, 0);
     color: #fffefc;
     cursor: pointer;
   }
-  &[type="radio"] {
-    display: none;
-  }
+  
 }
 
 label {
@@ -69,7 +70,7 @@ label {
   overflow: hidden;
   span {
     cursor: pointer;
-    color: #349e97;
+    color: rgb(233, 70, 0);
   }
 }
 

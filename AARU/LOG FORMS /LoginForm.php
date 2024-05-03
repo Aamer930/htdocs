@@ -14,8 +14,7 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
-
-    $stmt = $conn->prepare("SELECT first_name, last_name, password FROM users WHERE email = ?");
+    $stmt = $conn->prepare("SELECT first_name, last_name, password, is_admin FROM users WHERE email = ?");
     if (!$stmt) {
         echo "Prepare failed: (" . $conn->errno . ") " . $conn->error;
     } else {
@@ -24,15 +23,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->store_result();
 
         if ($stmt->num_rows > 0) {
-            $stmt->bind_result($firstName, $lastName, $hashed_password);
+            $stmt->bind_result($firstName, $lastName, $hashed_password, $is_admin);
             $stmt->fetch();
             if (password_verify($password, $hashed_password)) {
                 $_SESSION['email'] = $email;
                 $_SESSION['first_name'] = $firstName;
                 $_SESSION['last_name'] = $lastName;
 
-                header("Location: ../HomePage.php");
-                exit();
+                if ($is_admin) {
+                    $_SESSION['role'] = 'admin';
+                    header("Location: /AARU/ADMIN HomePage.php");
+                } else {
+                    $_SESSION['role'] = 'user';
+                    header("Location: /AARU/HomePage.php");
+                }
+
+                exit(); 
             } else {
                 echo "Invalid credentials. Please try again or <a href='register.html'>register here</a>.";
             }
