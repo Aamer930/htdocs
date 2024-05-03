@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['email'] = $email;
             $_SESSION['firstName'] = $firstName;
             $_SESSION['lastName'] = $lastName;
-            header("Location: LoginForm.html");
+            header("Location: Login.html");
             exit();
         } else {
             echo "Error: " . $stmt->error;
