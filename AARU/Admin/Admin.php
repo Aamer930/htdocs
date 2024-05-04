@@ -33,27 +33,94 @@ $result = $conn->query($sql);
 <head>
     <meta charset="UTF-8">
     <title>Manage Trips</title>
+    <link rel="stylesheet" href="Admin.css">
 </head>
 
 <body>
-    <h1>Add New Trip</h1>
-    <form method="post">
-        <input type="text" name="destination" placeholder="Destination" required>
-        <input type="date" name="date" required>
-        <input type="number" name="price" placeholder="Price" required>
-        <textarea name="description" placeholder="Description" required></textarea>
-        <input type="number" name="capacity" placeholder="Capacity" required>
-        <button type="submit">Add Trip</button>
-        <a href="/AARU/Admin/AdminEdit.php"><input type="button" value="EDIT OR DELETE"></a>
-    </form>
+<header class="nav-header">
+        <a href="#" class="logo">𓄿𓄿𓂋𓅲</a>
+        <?php
+        session_start();
+        if (isset($_SESSION['first_name']) && isset($_SESSION['last_name'])) {
+            echo 'HELLO, ' . $_SESSION['first_name'] . ' ' . $_SESSION['last_name'];
+        } else {
+            echo 'Session variables are not set.';
+        }
+        session_unset();
+        ?>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/AARU/HomePage.php" class="navbar_text">Home</a></li>
+                <li><a href="/AARU/circleNav.php" class="navbar_text">circleNav</a></li>
+                <li><a href="/AARU/BookingPage.php" class="navbar_text">book trip</a></li>
 
-    <h1>Existing Trips</h1>
-    <ul>
-        <?php while ($row = $result->fetch_assoc()): ?>
-            <li><?= htmlspecialchars($row['destination']) ?> (<?= $row['date'] ?>) - $<?= $row['price'] ?> - Capacity:
-                <?= $row['capacity'] ?></li>
-        <?php endwhile; ?>
-    </ul>
+            </ul>
+        </nav>
+        <a href="/AARU/AboutUs/AboutUs.html"><button class="aboutus_butt">ABOUT US!!</button></a>
+    </header>
+
+
+
+
+    <div class="container">
+        <div class="box form-box">
+            <h1>Add New Trip</h1>
+            <form action="" method="post">
+            <label class="label">Add destination:</label>
+                <div class="field-input">
+                
+                    <input type="text" name="destination" placeholder="Destination" required>
+                </div>
+        
+                <label class="label">Add date:</label>
+                <div class="field-input">
+                
+                    <input type="date" name="date" required>
+                </div>
+        
+                <label class="label">Add description:</label>
+                <div class="field-input">
+                
+                    <textarea name="description" placeholder="Description" required></textarea>
+                </div>
+        
+                <label class="label">Add destination:</label>
+                <div class="field-input">
+                
+                    <input type="number" name="price" placeholder="Price" required>
+                </div>
+
+                <label class="label">Add capacity:</label>
+                <div class="field-input">
+                
+                    <input type="number" name="capacity" placeholder="Capacity" required>
+                </div>
+        
+                <div class="field">
+                    <button class="button" type="submit">Add Trip</button>
+                    <a href="/AARU/Admin/A  dminEdit.php"><input class="button" type="button" value="EDIT OR DELETE"></a>
+                </div>
+                
+                <br><hr>
+        
+                <h1>Existing Trips</h1>
+        
+                <div class="trips-field">
+                    
+                       <ul >
+                            <?php while ($row = $result->fetch_assoc()): ?>
+                            <li class="trips-field"><?= htmlspecialchars($row['destination']) ?> (<?= $row['date'] ?>) - $<?= $row['price'] ?> - Capacity:
+                            <?= $row['capacity'] ?> <br> - <?= $row['description']?></li>
+                            <?php endwhile; ?>
+                       </ul>
+                </div>
+            </form>
+            </div>
+
+        </div>
+   
+
+    
 </body>
 
 </html>
