@@ -25,7 +25,7 @@
 
 	<li class="card">
 		<a class="card-image-nef" href="./KINGS,QUEENS,ETC../King Khufu.php" target="_blank">
-			<img class="a7a" src="../PICS/King Khufu/Portrait King khufu.svg" alt="let's go" />
+			<img class="aa" src="../PICS/King Khufu/Portrait King khufu.svg" alt="let's go" />
 		</a>
 		<a class="card-description" href="./KINGS,QUEENS,ETC../King Khufu.php" target="_blank">
 			<h2>King Khufu</h2>
@@ -34,7 +34,7 @@
 
 	<li class="card">
 		<a class="card-image-nef" href="./KINGS,QUEENS,ETC../Queen  Nefertiti.php" target="_blank">
-			<img class="a7a" src="../PICS/Queen Nefertiti/Queen Nefertiti 2.webp" alt="let's go" />
+			<img class="aa" src="../PICS/Queen Nefertiti/Queen Nefertiti 2.webp" alt="let's go" />
 		</a>
 		<a class="card-description" href="./KINGS,QUEENS,ETC../Queen  Nefertiti.php" target="_blank">
 			<h2>Queen Nefertiti</h2>
@@ -43,7 +43,7 @@
 
 	<li class="card">
 		<a class="card-image-nef" href="./KINGS,QUEENS,ETC../Ramses.php" target="_blank">
-			<img class="a7a" src="../PICS/Ramses II/Ramses1.jpeg" alt="let's go" />
+			<img class="aa" src="../PICS/Ramses II/Ramses1.jpeg" alt="let's go" />
 		</a>
 		<a class="card-description" href="./KINGS,QUEENS,ETC../Ramses.php" target="_blank">
 			<h2>Ramsees</h2>
@@ -53,7 +53,7 @@
 
 		<li class="card">
 			<a class="card-image-nef" href="../King Khufu.HTML" target="_blank">
-				<img class="a7a" src="../PICS/King Khufu/Portrait King khufu.svg" alt="let's go" />
+				<img class="aa" src="../PICS/King Khufu/Portrait King khufu.svg" alt="let's go" />
 			</a>
 			<a class="card-description" href="../Queen  Nefertiti.HTML" target="_blank">
 				<h2>King Khufu</h2>
@@ -62,7 +62,7 @@
 
 		<li class="card">
 			<a class="card-image-nef" href="../Queen  Nefertiti.HTML" target="_blank">
-				<img class="a7a" src="../PICS/Queen Nefertiti/Queen Nefertiti 2.webp" alt="let's go" />
+				<img class="aa" src="../PICS/Queen Nefertiti/Queen Nefertiti 2.webp" alt="let's go" />
 			</a>
 			<a class="card-description" href="../Queen  Nefertiti.HTML" target="_blank">
 				<h2>Queen Nefertiti</h2>
@@ -71,7 +71,7 @@
 
 		<li class="card">
 			<a class="card-image-nef" href="../Ramses.HTML" target="_blank">
-				<img class="a7a" src="../PICS/Ramses II/Ramses1.jpeg" alt="let's go" />
+				<img class="aa" src="../PICS/Ramses II/Ramses1.jpeg" alt="let's go" />
 			</a>
 			<a class="card-description" href="../Queen  Nefertiti.HTML" target="_blank">
 				<h2>Ramsees</h2>

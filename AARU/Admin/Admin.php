@@ -84,7 +84,7 @@ $result = $conn->query($sql);
                     <textarea name="description" placeholder="Description" required></textarea>
                 </div>
         
-                <label class="label">Add destination:</label>
+                <label class="label">Add Price:</label>
                 <div class="field-input">
                 
                     <input type="number" name="price" placeholder="Price" required>
@@ -98,7 +98,7 @@ $result = $conn->query($sql);
         
                 <div class="field">
                     <button class="button" type="submit">Add Trip</button>
-                    <a href="/AARU/Admin/A  dminEdit.php"><input class="button" type="button" value="EDIT OR DELETE"></a>
+                    <a href="/AARU/Admin/AdminEdit.php"><input class="button" type="button" value="EDIT OR DELETE"></a>
                 </div>
                 
                 <br><hr>
