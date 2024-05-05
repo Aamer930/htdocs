@@ -1,20 +1,20 @@
 <?php
 session_start();
 
-// Establish a connection to the database
-$conn = new mysqli("localhost", "root", "", "AARU");
+$servername = "localhost";
+$username = "root";
+$password = "";
+$db = "AARU";
+$conn = new mysqli($servername, $username, $password, $db);
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-$message = "";
 
 // Handle form submission for payment method
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['payment_method'])) {
     if ($_POST['payment_method'] === 'Cash') {
         processCashPayment($conn);
-    } else {
-        $message = "This payment method is not yet available.";
     }
 }
 
@@ -22,19 +22,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['payment_method'])) {
 $total_cost = calculateTotalCost($conn);
 
 // Function to process cash payment
-function processCashPayment($conn)
-{
-    // Start transaction
+function processCashPayment($conn) {
+    // Start a database transaction
     $conn->begin_transaction();
     $_SESSION['booked'] = [];
 
     foreach ($_SESSION['cart'] as $trip_id => $spots) {
-        if (reserveSpots($conn, $trip_id, $spots)) {
-            $_SESSION['booked'][$trip_id] = $spots;
-        } else {
+        if (!reserveSpots($conn, $trip_id, $spots)) {
             $conn->rollback();
             return;
         }
+        $_SESSION['booked'][$trip_id] = $spots;
     }
 
     $conn->commit();
@@ -44,8 +42,7 @@ function processCashPayment($conn)
 }
 
 // Function to reserve spots for a trip
-function reserveSpots($conn, $trip_id, $spots)
-{
+function reserveSpots($conn, $trip_id, $spots) {
     $stmt = $conn->prepare("SELECT capacity FROM trips WHERE id = ?");
     $stmt->bind_param("i", $trip_id);
     $stmt->execute();
@@ -63,8 +60,7 @@ function reserveSpots($conn, $trip_id, $spots)
 }
 
 // Function to calculate the total cost of items in the cart
-function calculateTotalCost($conn)
-{
+function calculateTotalCost($conn) {
     $total_cost = 0;
     if (!empty($_SESSION['cart'])) {
         $cart_ids = implode(',', array_keys($_SESSION['cart']));
@@ -75,28 +71,20 @@ function calculateTotalCost($conn)
     }
     return $total_cost;
 }
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Payment</title>
 </head>
-
 <body>
     <h1>Choose Payment Method</h1>
-    <?php if ($message != "")
-        echo "<p>$message</p>"; ?>
 
     <form action="" method="post">
-        <label><input type="radio" name="payment_method" value="Visa" disabled> Visa (SOON)</label><br>
-        <label><input type="radio" name="payment_method" value="Fawry" disabled> Fawry (SOON)</label><br>
-        <label><input type="radio" name="payment_method" value="Instapay" disabled> Instapay (SOON)</label><br>
-        <label><input type="radio" name="payment_method" value="Vodafone Cash" disabled> Vodafone Cash
-            (SOON)</label><br>
-        <label><input type="radio" name="payment_method" value="Cash" required> Cash</label><br>
+        <?php renderPaymentOptions(); ?>
         <input type="submit" value="Confirm Payment">
     </form>
 
@@ -106,13 +94,27 @@ function calculateTotalCost($conn)
     </ul>
     <p>Total Cost: $<?= $total_cost ?></p>
 </body>
-
 </html>
 
 <?php
+// Function to render the payment options
+function renderPaymentOptions() {
+    $options = [
+        "Visa" => "Visa (SOON)",
+        "Fawry" => "Fawry (SOON)",
+        "Instapay" => "Instapay (SOON)",
+        "Vodafone Cash" => "Vodafone Cash (SOON)",
+        "Cash" => "Cash"
+    ];
+    foreach ($options as $value => $label) {
+        $disabled = ($value != "Cash") ? "disabled" : "";
+        $required = ($value == "Cash") ? "required" : "";
+        echo "<label><input type='radio' name='payment_method' value='$value' $disabled $required> $label</label><br>";
+    }
+}
+
 // Function to render the cart items
-function renderCartItems($conn)
-{
+function renderCartItems($conn) {
     if (!empty($_SESSION['cart'])) {
         $cart_ids = implode(',', array_keys($_SESSION['cart']));
         $result = $conn->query("SELECT id, destination, date, price FROM trips WHERE id IN ($cart_ids)");
