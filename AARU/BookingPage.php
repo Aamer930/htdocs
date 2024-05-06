@@ -75,6 +75,8 @@ function fetchAllTrips($conn) {
 <head>
     <meta charset="UTF-8">
     <title>Book a Trip</title>
+    <link rel="stylesheet" href="BookingPage.css">
+
 </head>
 <body>
     <h1>Available Trips</h1>

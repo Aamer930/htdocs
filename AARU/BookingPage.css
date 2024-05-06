@@ -1,0 +1,66 @@
+body {
+    background-image: url("../AARU/PICS/back11.svg");
+    background-size: cover;
+    background-color: #e5d5bd;
+    z-index: 10;
+    font-family: "Raleway", sans-serif;
+  }
+
+  h1{
+    color: rgb(233, 70, 0);
+    font-size: 25px;
+  }
+  ul{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    background: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 0px;
+  }
+
+  ul li{
+
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    justify-content: left;
+    align-items: left;
+    gap: 20px;
+    
+  }
+
+  .li1{
+    margin-bottom: 20px;
+  }
+
+.button1{
+    background-color: rgb(233, 70, 0);
+    border: none;
+    border-radius: 2px;
+    padding: 3px 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.button1.button1:hover{
+
+    background-color: rgba(233, 70, 0, 0.8);
+
+    transition: 0.3s;
+}
+
+  
+  form{
+
+    margin-left: 10px;
+
+  }
+
+  .image{
+
+    padding: 10px 10px;
+  }
+
