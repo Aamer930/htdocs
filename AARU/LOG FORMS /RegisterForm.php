@@ -22,6 +22,7 @@ VALUES ('$email', '$firstName', '$lastName', '$phoneNumber', '$nationality', '$p
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
+  header("Location: /AARU/LOG FORMS /Login.html");
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
