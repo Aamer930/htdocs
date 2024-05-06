@@ -33,10 +33,8 @@ $trips = fetchAllTrips($conn);
 
 // Function to cancel a booking
 function cancelBooking($conn, $trip_id) {
-    // Check if the trip is booked and retrieve the number of spots
     $spots = $_SESSION['booked'][$trip_id] ?? 0;
     if ($spots > 0) {
-        // Restore the capacity of the trip
         $stmt = $conn->prepare("UPDATE trips SET capacity = capacity + ? WHERE id = ?");
         $stmt->bind_param("ii", $spots, $trip_id);
         $stmt->execute();
@@ -84,11 +82,6 @@ function fetchAllTrips($conn) {
         <?php while ($trip = $trips->fetch_assoc()): ?>
             <li>
                 <?= htmlspecialchars($trip['destination']) ?> (<?= $trip['date'] ?>) - $<?= $trip['price'] ?> - Spots Left: <?= $trip['capacity'] ?>
-                <!-- Display cover photo if available -->
-                <!-- This code checks if a cover photo exists and displays it -->
-                <?php if (!empty($trip['cover_photo'])): ?>
-                    <br><img src="<?= $trip['cover_photo'] ?>" alt="Cover Photo" style="width:200px;height:auto;">
-                <?php endif; ?>
 
                 <form action="" method="get" style="display:inline;">
                     <input type="hidden" name="trip_id" value="<?= $trip['id'] ?>">
