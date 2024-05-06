@@ -9,7 +9,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-
 // Start the session to manage cart and bookings
 session_start();
 
@@ -85,6 +84,12 @@ function fetchAllTrips($conn) {
         <?php while ($trip = $trips->fetch_assoc()): ?>
             <li>
                 <?= htmlspecialchars($trip['destination']) ?> (<?= $trip['date'] ?>) - $<?= $trip['price'] ?> - Spots Left: <?= $trip['capacity'] ?>
+                <!-- Display cover photo if available -->
+                <!-- This code checks if a cover photo exists and displays it -->
+                <?php if (!empty($trip['cover_photo'])): ?>
+                    <br><img src="<?= $trip['cover_photo'] ?>" alt="Cover Photo" style="width:200px;height:auto;">
+                <?php endif; ?>
+
                 <form action="" method="get" style="display:inline;">
                     <input type="hidden" name="trip_id" value="<?= $trip['id'] ?>">
                     <input type="number" name="spots" value="1" min="1" max="<?= $trip['capacity'] ?>">
@@ -109,7 +114,7 @@ function fetchAllTrips($conn) {
         <?php endif; ?>
     </ul>
 
-    <h2>Booked Trips</h2>
+    <h2>Booked Trips</ul></h2>
     <ul>
         <?php if (!empty($_SESSION['booked'])): ?>
             <?php foreach ($_SESSION['booked'] as $trip_id => $spots): ?>
