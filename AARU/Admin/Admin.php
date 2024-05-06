@@ -50,7 +50,7 @@ $result = $conn->query($sql);
             <ul>
                 <li><a href="/AARU/HomePage.php" class="navbar_text">Home</a></li>
                 <li><a href="/AARU/circleNav.php" class="navbar_text">circleNav</a></li>
-                <li><a href="/AARU/BookingPage.php" class="navbar_text">book trip</a></li>
+                <li><a href="/AARU/BookingPage.php" class="navbar_text">Publish trip</a></li>
             </ul>
         </nav>
         <a href="/AARU/AboutUs/AboutUs.html"><button class="aboutus_butt">ABOUT US!!</button></a>

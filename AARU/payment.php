@@ -78,21 +78,23 @@ function calculateTotalCost($conn) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="Payment.css">
     <title>Payment</title>
 </head>
 <body>
-    <h1>Choose Payment Method</h1>
-
-    <form action="" method="post">
-        <?php renderPaymentOptions(); ?>
-        <input type="submit" value="Confirm Payment">
-    </form>
-
-    <h2>Your Cart</h2>
+    <h1>Your Cart</h1>
     <ul>
-        <?= renderCartItems($conn) ?>
+         <?= renderCartItems($conn) ?>
     </ul>
     <p>Total Cost: $<?= $total_cost ?></p>
+    <h1>Choose Payment Method</h1>
+
+    <form class="box" action="" method="post">
+        <?php renderPaymentOptions(); ?>
+        <input class="button1" type="submit" value="Confirm Payment">
+    </form>
+
+    
 </body>
 </html>
 

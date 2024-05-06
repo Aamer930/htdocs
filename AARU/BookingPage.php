@@ -89,7 +89,7 @@ function fetchAllTrips($conn) {
                     <input type="hidden" name="trip_id" value="<?= $trip['id'] ?>">
                     <input type="number" name="spots" value="1" min="1" max="<?= $trip['capacity'] ?>">
                     <input type="hidden" name="add_to_cart" value="true">
-                    <input type="submit" value="Add to Cart">
+                    <input class="button1" type="submit" value="Add to Cart">
                 </form>
             </li>
         <?php endwhile; ?>
@@ -102,7 +102,7 @@ function fetchAllTrips($conn) {
                 <li>Trip ID <?= $trip_id ?> - Spots: <?= $spots ?></li>
             <?php endforeach; ?>
             <form action="payment.php" method="post">
-                <input type="submit" value="Proceed to Pay">
+                <input class="button1" type="submit" value="Proceed to Pay">
             </form>
         <?php else: ?>
             <li>Your cart is empty.</li>
@@ -114,7 +114,7 @@ function fetchAllTrips($conn) {
         <?php if (!empty($_SESSION['booked'])): ?>
             <?php foreach ($_SESSION['booked'] as $trip_id => $spots): ?>
                 <li>Trip ID <?= $trip_id ?> - Spots: <?= $spots ?>
-                    <button onclick="window.location.href='?cancel_booking=true&trip_id=<?= $trip_id ?>'">Cancel Booking</button>
+                    <button class="button" onclick="window.location.href='?cancel_booking=true&trip_id=<?= $trip_id ?>'">Cancel Booking</button>
                 </li>
             <?php endforeach; ?>
         <?php else: ?>
